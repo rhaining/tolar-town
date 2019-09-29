@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Posts on Tolar Town</title>
+    <link>https://tolar.town/posts/</link>
+    <description>Recent content in Posts on Tolar Town</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <lastBuildDate>Sat, 28 Sep 2019 21:20:10 -0400</lastBuildDate>
+    
+	<atom:link href="https://tolar.town/posts/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>More to come…</title>
+      <link>https://tolar.town/posts/2019/09/28/more-to-come/</link>
+      <pubDate>Sat, 28 Sep 2019 21:20:10 -0400</pubDate>
+      
+      <guid>https://tolar.town/posts/2019/09/28/more-to-come/</guid>
+      <description>  </description>
+    </item>
+    
+    <item>
+      <title>Hey, y&#39;all</title>
+      <link>https://tolar.town/posts/2019/09/28/hey-yall/</link>
+      <pubDate>Sat, 28 Sep 2019 21:19:10 -0400</pubDate>
+      
+      <guid>https://tolar.town/posts/2019/09/28/hey-yall/</guid>
+      <description>Welcome to a blog.</description>
+    </item>
+    
+  </channel>
+</rss>
