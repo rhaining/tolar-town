@@ -845,8 +845,9 @@ h2.month {
 
 a.symbol {
     color: #cdd4da;
-    font-size: 2rem;
+    font-size: 1.3rem;
     text-decoration: none;
+    margin-left: 0.3rem;
     margin-right: 0.3rem;
 }
 
