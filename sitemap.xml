@@ -8,13 +8,33 @@
   </url>
   
   <url>
+    <loc>https://tolar.town/tags/me/</loc>
+    <lastmod>2019-09-29T12:38:10-04:00</lastmod>
+  </url>
+  
+  <url>
     <loc>https://tolar.town/posts/</loc>
+    <lastmod>2019-09-29T12:38:10-04:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://tolar.town/tags/</loc>
     <lastmod>2019-09-29T12:38:10-04:00</lastmod>
   </url>
   
   <url>
     <loc>https://tolar.town/</loc>
     <lastmod>2019-09-29T12:38:10-04:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://tolar.town/tags/australia/</loc>
+    <lastmod>2019-09-29T11:20:10-04:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://tolar.town/tags/gif/</loc>
+    <lastmod>2019-09-29T11:20:10-04:00</lastmod>
   </url>
   
   <url>
@@ -34,10 +54,6 @@
   
   <url>
     <loc>https://tolar.town/categories/</loc>
-  </url>
-  
-  <url>
-    <loc>https://tolar.town/tags/</loc>
   </url>
   
 </urlset>
