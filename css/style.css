@@ -499,15 +499,20 @@ Post List
 
 #post-list a {
     color: #333;
-    display: block;
-    font: bold 19px/1.7 "Helvetica Neue", helvetica, Arial, sans-serif;
+    /* display: block; */
+    /* font: bold 19px/1.7 "Helvetica Neue", helvetica, Arial, sans-serif; */
+}
+
+#post-list .title {
+  /* color: #333; */
+  font: bold 35px/2.7 "Helvetica Neue", helvetica, Arial, sans-serif;
 }
 
 #post-list .dates {
     float: right;
     position: relative;
     top: 1px;
-    font: 300 17px/1.8 "Helvetica Neue", helvetica, Arial, sans-serif;
+    font: 300 17px/5.8 "Helvetica Neue", helvetica, Arial, sans-serif;
     color: #bbb;
 }
 
