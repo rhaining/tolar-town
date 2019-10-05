@@ -546,6 +546,12 @@ Post List
 #footer {
     margin-top: 100px;
 }
+#footer a {
+  color: #aaa;
+}
+#footer .poweredby {
+  font-size: 0.8em;
+}
 
 
 /* Post Page */
