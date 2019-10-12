@@ -224,15 +224,16 @@ nav.main-nav a.cta {
 }
 
 #wrapper {
-    max-width: 600px;
+    max-width: 750px;
     margin: 0 auto;
-    padding: 60px 20px 100px 20px;
+    /* padding: 60px 20px 100px 20px; */
+    /* padding: 0px 40px 20px 40px; */
 }
 
 #wrapper.home {
-    max-width: 750px;
-    margin: 0 auto;
-    padding: 0px 40px 20px 40px;
+    /* max-width: 750px; */
+    /* margin: 0 auto; */
+    /* padding: 0px 40px 20px 40px; */
 }
 
 .home #avatar {
@@ -280,7 +281,7 @@ ul {
 li {
     list-style-position: outside;
     /* text-indent: -1.5em; */
-    margin-left: 1.5em;
+    /* margin-left: 1.5em; */
 }
 
 ul>li {
@@ -335,14 +336,18 @@ em, i {
 }
 
 .post header {
-    text-align: center;
+    /* text-align: center; */
+}
+.post .dates {
+
 }
 
 .post h1 {
     margin-top: 40px;
     margin-bottom: 20px;
     color: #222;
-    font: 300 32px/1.4em "Helvetica Neue", Helvetica, Arial, sans-serif;
+    /* font: 300 32px/1.4em "Helvetica Neue", Helvetica, Arial, sans-serif; */
+    font: bold 35px "Helvetica Neue", helvetica, Arial, sans-serif;
 }
 
 .post h2 {
@@ -510,13 +515,13 @@ Post List
     /* font: bold 19px/1.7 "Helvetica Neue", helvetica, Arial, sans-serif; */
 }
 
-#post-list .title {
+#post-list .title, .post .title {
   /* color: #333; */
   font: bold 35px "Helvetica Neue", helvetica, Arial, sans-serif;
   margin-bottom: 1em;
 }
 
-#post-list .dates {
+#post-list .dates, .post .dates {
     float: right;
     position: relative;
     top: 1px;
@@ -568,7 +573,7 @@ Post List
 #header {
 }
 #wrapper.post {
-    max-width: 670px;
+    /* max-width: 670px; */
 }
 .post {
     margin: auto;
@@ -932,7 +937,7 @@ a.symbol:hover {
  */
 
 #wrapper.tags {
-    max-width: 768px;
+    /* max-width: 768px; */
     padding-top: 0;
 }
 .page-tags {
@@ -952,4 +957,7 @@ a.symbol:hover {
 }
 .page-tags ul li a:hover {
     color: #5694f1;
+}
+.page-tags #tag-cloud .tag-cloud-tag {
+  padding: 10px 10px;
 }
