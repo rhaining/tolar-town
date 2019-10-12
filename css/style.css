@@ -226,6 +226,8 @@ nav.main-nav a.cta {
 #wrapper {
     max-width: 750px;
     margin: 0 auto;
+    padding: 20px 20px 20px 20px;
+
     /* padding: 60px 20px 100px 20px; */
     /* padding: 0px 40px 20px 40px; */
 }
@@ -518,6 +520,8 @@ Post List
 #post-list .title, .post .title {
   /* color: #333; */
   font: bold 35px "Helvetica Neue", helvetica, Arial, sans-serif;
+}
+#post-list .title {
   margin-bottom: 1em;
 }
 
@@ -795,8 +799,11 @@ h2.month {
     #title {
         font-size: 17px;
     }
-    #post-list .dates {
-        display: none;
+    #post-list .dates, .post .dates{
+      float: none;
+      position: inherit;
+
+        /* display: none; */
     }
     #post-list-footer {
         margin-top: 20px;
