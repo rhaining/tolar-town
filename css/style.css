@@ -511,7 +511,7 @@ Post List
     padding-top: 80px;
 }
 
-#post-list a {
+#post-list .title a, #post-list .dates a {
     color: #333;
     /* display: block; */
     /* font: bold 19px/1.7 "Helvetica Neue", helvetica, Arial, sans-serif; */
