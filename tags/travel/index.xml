@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>travel on Tolar Town</title>
+    <link>https://tolar.town/tags/travel/</link>
+    <description>Recent content in travel on Tolar Town</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <lastBuildDate>Tue, 22 Oct 2019 13:15:00 +1100</lastBuildDate>
+    
+	<atom:link href="https://tolar.town/tags/travel/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>Traveling from Vallejo to Melbourne</title>
+      <link>https://tolar.town/posts/2019/10/22/travel-day/</link>
+      <pubDate>Tue, 22 Oct 2019 13:15:00 +1100</pubDate>
+      
+      <guid>https://tolar.town/posts/2019/10/22/travel-day/</guid>
+      <description>Starting Sunday afternoon California time, I took a Lyft from Vallejo to Sacramento airport, where I endured a 5 hour delay in taking off. We made it to Los Angeles, just in time for me to sprint across two terminals and take a shuttle bus to make it for my next leg from LA to Sydney. Delta&amp;rsquo;s &amp;ldquo;Premium Select&amp;rdquo; was very comfortable with a fairly large TV screen, good food &amp;amp; wine, and quality service from our flight attendants.</description>
+    </item>
+    
+  </channel>
+</rss>
