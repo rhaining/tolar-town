@@ -104,10 +104,16 @@ table {
 
 /* Spacing */
 
-.post h1, h3, h4, h5, p, #post-body ul, #post-list li, #post-body ol, pre {
+.post h1, h3, h4, h5, p, #post-body ul, ul#post-list > li, #post-body ol, pre {
     margin-bottom: 20px;
 }
 
+div.post-content li {
+  margin-bottom: 10px;
+}
+div.post-content ul {
+  margin-bottom: 20px;
+}
 
 /* Base */
 
@@ -136,7 +142,7 @@ h2 {
 
 .profile #wrapper {
     padding: 20px 0px 0px;
-    max-width: 600px;
+    max-width: 450px;
     margin: 0 auto;
 }
 
@@ -224,7 +230,7 @@ nav.main-nav a.cta {
 }
 
 #wrapper {
-    max-width: 750px;
+    max-width: 640px;
     margin: 0 auto;
     padding: 20px 20px 20px 20px;
 
@@ -499,15 +505,15 @@ Post List
 #post-list, #archive-list {
 }
 
-#post-list li, #archive-list li {
+ul#post-list > li, #archive-list li {
     list-style-type: none;
 }
 
-#post-list li:last-child {
+ul#post-list > li:last-child {
     margin-bottom: 0;
 }
 
-#post-list li+li {
+ul#post-list > li+li {
     padding-top: 80px;
 }
 
