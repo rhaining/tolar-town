@@ -110,6 +110,7 @@ table {
 
 div.post-content li {
   margin-bottom: 10px;
+  line-height: 1.5em;
 }
 div.post-content ul {
   margin-bottom: 20px;
