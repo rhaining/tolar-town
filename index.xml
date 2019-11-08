@@ -26,7 +26,11 @@
 &lt;em&gt;Kangaroos at the Anglesea Golf Club&lt;/em&gt;
 &lt;br/&gt;&lt;br/&gt;&lt;/p&gt;
 
-&lt;p&gt;&lt;img src=&#34;https://tolar.town/posts/2019/11/07/torquay/kangaroos.gif&#34; alt=&#34;Kangaroo hopping&#34; style=&#34;max-width: 350px;&#34;/&gt;&lt;br/&gt;
+&lt;p&gt;&lt;video controls poster=&#34;/posts/2019/11/07/torquay/kangaroos-poster.jpg&#34; controls=&#34;controls&#34;&gt;
+ &lt;source src=&#34;https://tolar.town/posts/2019/11/07/torquay/kangaroos.mov&#34; type=&#34;video/mp4&#34; /&gt;
+ &lt;source src=&#34;https://tolar.town/posts/2019/11/07/torquay/kangaroos.ogg&#34; type=&#34;video/ogg&#34; /&gt;
+ &lt;p&gt;kangaroos hopping&lt;/p&gt;
+ &lt;/video&gt;
 &lt;em&gt;Kangaroo hopping&lt;/em&gt;
 &lt;br/&gt;&lt;br/&gt;&lt;/p&gt;
 
