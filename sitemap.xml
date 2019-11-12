@@ -3,8 +3,38 @@
   xmlns:xhtml="http://www.w3.org/1999/xhtml">
   
   <url>
+    <loc>https://tolar.town/tags/art/</loc>
+    <lastmod>2019-11-12T14:00:00+11:00</lastmod>
+  </url>
+  
+  <url>
     <loc>https://tolar.town/tags/australia/</loc>
-    <lastmod>2019-11-11T23:00:00+11:00</lastmod>
+    <lastmod>2019-11-12T14:00:00+11:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://tolar.town/tags/me/</loc>
+    <lastmod>2019-11-12T14:00:00+11:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://tolar.town/posts/</loc>
+    <lastmod>2019-11-12T14:00:00+11:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://tolar.town/posts/2019/11/12/street-art/</loc>
+    <lastmod>2019-11-12T14:00:00+11:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://tolar.town/tags/</loc>
+    <lastmod>2019-11-12T14:00:00+11:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://tolar.town/</loc>
+    <lastmod>2019-11-12T14:00:00+11:00</lastmod>
   </url>
   
   <url>
@@ -14,21 +44,6 @@
   
   <url>
     <loc>https://tolar.town/posts/2019/11/11/penguins/</loc>
-    <lastmod>2019-11-11T23:00:00+11:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>https://tolar.town/posts/</loc>
-    <lastmod>2019-11-11T23:00:00+11:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>https://tolar.town/tags/</loc>
-    <lastmod>2019-11-11T23:00:00+11:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>https://tolar.town/</loc>
     <lastmod>2019-11-11T23:00:00+11:00</lastmod>
   </url>
   
@@ -58,11 +73,6 @@
   </url>
   
   <url>
-    <loc>https://tolar.town/tags/me/</loc>
-    <lastmod>2019-11-07T18:00:00+11:00</lastmod>
-  </url>
-  
-  <url>
     <loc>https://tolar.town/posts/2019/11/06/melbourne-to-torquay/</loc>
     <lastmod>2019-11-06T22:00:00+11:00</lastmod>
   </url>
@@ -84,11 +94,6 @@
   
   <url>
     <loc>https://tolar.town/posts/2019/11/02/shopping-day/</loc>
-    <lastmod>2019-11-02T20:12:00+11:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>https://tolar.town/tags/art/</loc>
     <lastmod>2019-11-02T20:12:00+11:00</lastmod>
   </url>
   
