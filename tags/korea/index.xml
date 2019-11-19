@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>korea on Tolar Town</title>
+    <link>https://tolar.town/tags/korea/</link>
+    <description>Recent content in korea on Tolar Town</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <lastBuildDate>Tue, 19 Nov 2019 20:00:00 +0900</lastBuildDate>
+    
+	<atom:link href="https://tolar.town/tags/korea/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>Seoul!</title>
+      <link>https://tolar.town/posts/2019/11/19/seoul/</link>
+      <pubDate>Tue, 19 Nov 2019 20:00:00 +0900</pubDate>
+      
+      <guid>https://tolar.town/posts/2019/11/19/seoul/</guid>
+      <description>After a long flight from Melbourne with a middle-of-the-night layover in Singapore, I made it to Seoul! I took the KAL (Korean Airlines) Limousine Bus from Seoul&amp;rsquo;s Incheon airport to the Grand Hyatt hotel. The bus was pretty nice, as it does a loop from the airport to major hotels in Seoul, so it&amp;rsquo;s a easy, inexpensive way to efficiently get to the destination.
+I was pretty wiped out when I checked in, but I managed to walk down to Full Moon where I had a beef bulgogi meal, complete with various Korean style sides.</description>
+    </item>
+    
+  </channel>
+</rss>
