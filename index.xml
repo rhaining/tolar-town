@@ -36,7 +36,7 @@
 
 &lt;p&gt;I put together this &lt;a href=&#34;https://1se.co/&#34;&gt;1 Second Everyday&lt;/a&gt; video mashup that takes photos &amp;amp; 1 second video clips from the past couple of months and mashes them together in a single video. Check it out!&lt;/p&gt;
 
-&lt;p&gt;&lt;video controls poster=&#34;/posts/2019/11/25/jeju-to-atlanta/1se.png&#34; controls=&#34;controls&#34;&gt;
+&lt;p&gt;&lt;video controls poster=&#34;/posts/2019/11/25/jeju-to-atlanta/1se.jpg&#34; controls=&#34;controls&#34;&gt;
  &lt;source src=&#34;https://tolar.town/posts/2019/11/25/jeju-to-atlanta/1se.mov&#34; type=&#34;video/mp4&#34; /&gt;
  &lt;!--&lt;source src=&#34;https://tolar.town/posts/2019/11/25/jeju-to-atlanta/.ogg&#34; type=&#34;video/ogg&#34; /&gt;--&gt;
  &lt;source src=&#34;https://tolar.town/posts/2019/11/25/jeju-to-atlanta/1se.webm&#34; type=&#34;video/webm&#34; /&gt;
