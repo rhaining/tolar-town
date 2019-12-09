@@ -3,27 +3,42 @@
   xmlns:xhtml="http://www.w3.org/1999/xhtml">
   
   <url>
+    <loc>https://tolar.town/posts/2019/12/08/back-in-the-ussa/</loc>
+    <lastmod>2019-12-08T22:28:00-05:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://tolar.town/tags/me/</loc>
+    <lastmod>2019-12-08T22:28:00-05:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://tolar.town/tags/nyc/</loc>
+    <lastmod>2019-12-08T22:28:00-05:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://tolar.town/posts/</loc>
+    <lastmod>2019-12-08T22:28:00-05:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://tolar.town/tags/</loc>
+    <lastmod>2019-12-08T22:28:00-05:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://tolar.town/</loc>
+    <lastmod>2019-12-08T22:28:00-05:00</lastmod>
+  </url>
+  
+  <url>
     <loc>https://tolar.town/tags/korea/</loc>
     <lastmod>2019-11-25T17:30:00+09:00</lastmod>
   </url>
   
   <url>
-    <loc>https://tolar.town/posts/</loc>
-    <lastmod>2019-11-25T17:30:00+09:00</lastmod>
-  </url>
-  
-  <url>
     <loc>https://tolar.town/posts/2019/11/25/jeju-to-atlanta/</loc>
-    <lastmod>2019-11-25T17:30:00+09:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>https://tolar.town/tags/</loc>
-    <lastmod>2019-11-25T17:30:00+09:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>https://tolar.town/</loc>
     <lastmod>2019-11-25T17:30:00+09:00</lastmod>
   </url>
   
@@ -39,11 +54,6 @@
   
   <url>
     <loc>https://tolar.town/posts/2019/11/23/jeju/</loc>
-    <lastmod>2019-11-23T21:00:00+09:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>https://tolar.town/tags/me/</loc>
     <lastmod>2019-11-23T21:00:00+09:00</lastmod>
   </url>
   
@@ -274,11 +284,6 @@
   
   <url>
     <loc>https://tolar.town/posts/2019/10/16/departing-nyc/</loc>
-    <lastmod>2019-10-16T12:00:00-04:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>https://tolar.town/tags/nyc/</loc>
     <lastmod>2019-10-16T12:00:00-04:00</lastmod>
   </url>
   
