@@ -6,10 +6,37 @@
     <description>Recent content in Tags on Tolar Town</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Mon, 27 Jan 2020 09:00:10 -0500</lastBuildDate>
+    <lastBuildDate>Mon, 13 Apr 2020 12:01:00 -0500</lastBuildDate>
     
 	<atom:link href="https://tolar.town/tags/index.xml" rel="self" type="application/rss+xml" />
     
+    
+    <item>
+      <title>food</title>
+      <link>https://tolar.town/tags/food/</link>
+      <pubDate>Mon, 13 Apr 2020 12:01:00 -0500</pubDate>
+      
+      <guid>https://tolar.town/tags/food/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>me</title>
+      <link>https://tolar.town/tags/me/</link>
+      <pubDate>Mon, 13 Apr 2020 12:01:00 -0500</pubDate>
+      
+      <guid>https://tolar.town/tags/me/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>nyc</title>
+      <link>https://tolar.town/tags/nyc/</link>
+      <pubDate>Mon, 13 Apr 2020 12:01:00 -0500</pubDate>
+      
+      <guid>https://tolar.town/tags/nyc/</guid>
+      <description></description>
+    </item>
     
     <item>
       <title>new orleans</title>
@@ -30,38 +57,11 @@
     </item>
     
     <item>
-      <title>food</title>
-      <link>https://tolar.town/tags/food/</link>
-      <pubDate>Mon, 27 Jan 2020 09:00:07 -0500</pubDate>
-      
-      <guid>https://tolar.town/tags/food/</guid>
-      <description></description>
-    </item>
-    
-    <item>
       <title>cocktails</title>
       <link>https://tolar.town/tags/cocktails/</link>
       <pubDate>Mon, 27 Jan 2020 09:00:06 -0500</pubDate>
       
       <guid>https://tolar.town/tags/cocktails/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>me</title>
-      <link>https://tolar.town/tags/me/</link>
-      <pubDate>Sun, 08 Dec 2019 22:28:00 -0500</pubDate>
-      
-      <guid>https://tolar.town/tags/me/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>nyc</title>
-      <link>https://tolar.town/tags/nyc/</link>
-      <pubDate>Sun, 08 Dec 2019 22:28:00 -0500</pubDate>
-      
-      <guid>https://tolar.town/tags/nyc/</guid>
       <description></description>
     </item>
     

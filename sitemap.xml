@@ -3,6 +3,41 @@
   xmlns:xhtml="http://www.w3.org/1999/xhtml">
   
   <url>
+    <loc>https://tolar.town/tags/food/</loc>
+    <lastmod>2020-04-13T12:01:00-05:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://tolar.town/posts/2020/04/13/pause/</loc>
+    <lastmod>2020-04-13T12:01:00-05:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://tolar.town/tags/me/</loc>
+    <lastmod>2020-04-13T12:01:00-05:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://tolar.town/tags/nyc/</loc>
+    <lastmod>2020-04-13T12:01:00-05:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://tolar.town/posts/</loc>
+    <lastmod>2020-04-13T12:01:00-05:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://tolar.town/tags/</loc>
+    <lastmod>2020-04-13T12:01:00-05:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://tolar.town/</loc>
+    <lastmod>2020-04-13T12:01:00-05:00</lastmod>
+  </url>
+  
+  <url>
     <loc>https://tolar.town/tags/new-orleans/</loc>
     <lastmod>2020-01-27T09:00:10-05:00</lastmod>
   </url>
@@ -14,21 +49,6 @@
   
   <url>
     <loc>https://tolar.town/posts/2020/01/27/architecture/</loc>
-    <lastmod>2020-01-27T09:00:10-05:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>https://tolar.town/posts/</loc>
-    <lastmod>2020-01-27T09:00:10-05:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>https://tolar.town/tags/</loc>
-    <lastmod>2020-01-27T09:00:10-05:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>https://tolar.town/</loc>
     <lastmod>2020-01-27T09:00:10-05:00</lastmod>
   </url>
   
@@ -45,11 +65,6 @@
   <url>
     <loc>https://tolar.town/posts/2020/01/27/music/</loc>
     <lastmod>2020-01-27T09:00:08-05:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>https://tolar.town/tags/food/</loc>
-    <lastmod>2020-01-27T09:00:07-05:00</lastmod>
   </url>
   
   <url>
@@ -84,16 +99,6 @@
   
   <url>
     <loc>https://tolar.town/posts/2019/12/08/back-in-the-ussa/</loc>
-    <lastmod>2019-12-08T22:28:00-05:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>https://tolar.town/tags/me/</loc>
-    <lastmod>2019-12-08T22:28:00-05:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>https://tolar.town/tags/nyc/</loc>
     <lastmod>2019-12-08T22:28:00-05:00</lastmod>
   </url>
   
