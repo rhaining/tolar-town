@@ -6,10 +6,19 @@
     <description>Recent content in Tags on Tolar Town</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Mon, 13 Apr 2020 15:32:00 -0400</lastBuildDate>
+    <lastBuildDate>Mon, 13 Apr 2020 17:04:00 -0400</lastBuildDate>
     
 	<atom:link href="https://tolar.town/tags/index.xml" rel="self" type="application/rss+xml" />
     
+    
+    <item>
+      <title>tech</title>
+      <link>https://tolar.town/tags/tech/</link>
+      <pubDate>Mon, 13 Apr 2020 17:04:00 -0400</pubDate>
+      
+      <guid>https://tolar.town/tags/tech/</guid>
+      <description></description>
+    </item>
     
     <item>
       <title>nyc</title>

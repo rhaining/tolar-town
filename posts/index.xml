@@ -6,10 +6,21 @@
     <description>Recent content in Posts on Tolar Town</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Mon, 13 Apr 2020 15:32:00 -0400</lastBuildDate>
+    <lastBuildDate>Mon, 13 Apr 2020 17:04:00 -0400</lastBuildDate>
     
 	<atom:link href="https://tolar.town/posts/index.xml" rel="self" type="application/rss+xml" />
     
+    
+    <item>
+      <title>Let a million screensavers bloom</title>
+      <link>https://tolar.town/posts/2020/04/13/screensavers/</link>
+      <pubDate>Mon, 13 Apr 2020 17:04:00 -0400</pubDate>
+      
+      <guid>https://tolar.town/posts/2020/04/13/screensavers/</guid>
+      <description>This is nominally a &amp;ldquo;travel blog&amp;rdquo;, or something, but I also write code, and sometimes screensavers, so I thought I&amp;rsquo;d try putting this out there to see how it goes. Let me know what you think! mail@tolar.town or on twitter @tolar.
+Writing screensavers for macs is a little weird. But once you get past a few oddities, it can be lots of fun!
+For purposes of this post, I assume you have some knowledge of and experience with Xcode and Swift.</description>
+    </item>
     
     <item>
       <title>The New York Easter Parade lives on!</title>

@@ -6,10 +6,335 @@
     <description>Recent content on Tolar Town</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Mon, 13 Apr 2020 15:32:00 -0400</lastBuildDate>
+    <lastBuildDate>Mon, 13 Apr 2020 17:04:00 -0400</lastBuildDate>
     
         <atom:link href="https://tolar.town/index.xml" rel="self" type="application/rss+xml" />
     
+    
+      
+      
+
+        <item>
+          <title>Let a million screensavers bloom</title>
+          <link>https://tolar.town/posts/2020/04/13/screensavers/</link>
+          <pubDate>Mon, 13 Apr 2020 17:04:00 -0400</pubDate>
+          
+          <guid>https://tolar.town/posts/2020/04/13/screensavers/</guid>
+          <description>
+
+&lt;p&gt;This is nominally a &amp;ldquo;travel blog&amp;rdquo;, or something, but I also write code, and sometimes screensavers, so I thought I&amp;rsquo;d try putting this out there to see how it goes. Let me know what you think! &lt;a href=&#34;mailto:mail@tolar.town&#34;&gt;mail@tolar.town&lt;/a&gt; or on twitter &lt;a href=&#34;https://twitter.com/tolar&#34;&gt;@tolar&lt;/a&gt;.&lt;/p&gt;
+
+&lt;p&gt;Writing screensavers for macs is a little weird. But once you get past a few oddities, it can be lots of fun!&lt;/p&gt;
+
+&lt;p&gt;For purposes of this post, I assume you have some knowledge of and experience with Xcode and Swift. We&amp;rsquo;ll build a simple screensaver that spins a green square.&lt;/p&gt;
+
+&lt;p&gt;If you want to go ahead and download the complete source, you can find it &lt;a href=&#34;https://github.com/rhaining/screensaver-demo&#34;&gt;on GitHub&lt;/a&gt;.&lt;/p&gt;
+
+&lt;h1 id=&#34;setup-your-project&#34;&gt;Setup your project&lt;/h1&gt;
+
+&lt;p&gt;Let&amp;rsquo;s start with your Xcode project setup before we dive in to code: File -&amp;gt; New project. In the project template selection screen, select macOS -&amp;gt; Screen Saver.&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&#34;https://tolar.town/posts/2020/04/13/screensavers/1. project selection.png&#34; alt=&#34;Project selection&#34; /&gt;
+&lt;em&gt;Project selection&lt;/em&gt;
+&lt;br/&gt;&lt;br/&gt;&lt;/p&gt;
+
+&lt;p&gt;Continue with setup until you have a project. Xcode will generate an Objective-c subclass of &lt;code&gt;ScreenSaverView&lt;/code&gt; for you, but that&amp;rsquo;s no fun. Swift is the new hot thing, right? Go ahead and delete those files (&lt;code&gt;***View.h&lt;/code&gt; and &lt;code&gt;***View.m&lt;/code&gt;). Create a new Swift file. Here we call it &lt;code&gt;GreenSquareScreenSaverView&lt;/code&gt;, but you can name it as you please. (Note: if you change the name of the class, be sure to also update it in your Info.plist &amp;ldquo;Principal class&amp;rdquo; key.) You can use this stub code:&lt;/p&gt;
+
+&lt;pre&gt;&lt;code class=&#34;language-swift&#34;&gt;import Foundation
+import ScreenSaver
+
+class GreenSquareScreenSaverView: ScreenSaverView {
+    override init?(frame: CGRect, isPreview: Bool) {
+        super.init(frame: frame, isPreview: isPreview)
+        self.animationTimeInterval = 1 / 30.0
+    }
+    
+    required init?(coder: NSCoder) {
+        fatalError(&amp;quot;init(coder:) has not been implemented&amp;quot;)
+    }
+    
+    override func startAnimation() {
+        super.startAnimation()
+    }
+    
+    override func stopAnimation() {
+        super.stopAnimation()
+    }
+    
+    override func draw(_ rect: NSRect) {
+        super.draw(rect)
+    }
+    
+    override func animateOneFrame() {
+    }    
+}
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;Congrats, you have a functional screensaver! It might not do much apart from showing a blank screen, but it&amp;rsquo;ll build.&lt;/p&gt;
+
+&lt;h1 id=&#34;install-your-screensaver&#34;&gt;Install your screensaver&lt;/h1&gt;
+
+&lt;p&gt;One major difference between screensavers and apps is that you can&amp;rsquo;t simply &amp;ldquo;Run&amp;rdquo; from Xcode. To install the screensaver:&lt;/p&gt;
+
+&lt;ol&gt;
+&lt;li&gt;Build from Xcode.&lt;/li&gt;
+&lt;li&gt;Find the screensaver file under &amp;ldquo;Products&amp;rdquo;.&lt;/li&gt;
+&lt;li&gt;Right-click on it &amp;amp; select &amp;ldquo;Open with External Editor.&amp;rdquo;&lt;/li&gt;
+&lt;li&gt;This will open System Preferences and install the screensaver. (The first time, you&amp;rsquo;ll have to select the screensaver here).&lt;/li&gt;
+&lt;/ol&gt;
+
+&lt;p&gt;&lt;img src=&#34;https://tolar.town/posts/2020/04/13/screensavers/2. screensaver install.png&#34; alt=&#34;Install the screensaver&#34; /&gt;
+&lt;em&gt;Install the screensaver&lt;/em&gt;
+&lt;br/&gt;&lt;br/&gt;&lt;/p&gt;
+
+&lt;h1 id=&#34;add-a-mac-app-target-to-make-testing-easier&#34;&gt;Add a mac app target to make testing easier&lt;/h1&gt;
+
+&lt;p&gt;Troubleshooting screensavers is a pain in the butt. I highly recommend doing the bulk of your development using a mac app target. Then make sure to test it in screensaver mode, as this is treated a bit differently by macOS.&lt;/p&gt;
+
+&lt;p&gt;First, add a new target:&lt;/p&gt;
+
+&lt;ol&gt;
+&lt;li&gt;Select your project on the left.&lt;/li&gt;
+&lt;li&gt;Under &amp;ldquo;Targets&amp;rdquo;, at the bottom select the &amp;ldquo;+&amp;rdquo; button.&lt;/li&gt;
+&lt;li&gt;Under &amp;ldquo;macOS&amp;rdquo;, select &amp;ldquo;App&amp;rdquo;.&lt;/li&gt;
+&lt;li&gt;Continue with the prompts. I suggest naming it something like &amp;ldquo;Preview&amp;rdquo;.&lt;/li&gt;
+&lt;/ol&gt;
+
+&lt;p&gt;&lt;img src=&#34;https://tolar.town/posts/2020/04/13/screensavers/3. mac target.png&#34; alt=&#34;Setup the Mac target&#34; /&gt;
+&lt;br/&gt;&lt;br/&gt;&lt;/p&gt;
+
+&lt;p&gt;Hook up your mac app to the screensaver code you have. We need to expose the screensaver view class (and any other code you have written or will write):&lt;/p&gt;
+
+&lt;ol&gt;
+&lt;li&gt;Select the file(s) on the left.&lt;/li&gt;
+&lt;li&gt;On the right, select the File Inspector icon&lt;/li&gt;
+&lt;li&gt;Under &amp;ldquo;Target Membership&amp;rdquo;, make sure your screensaver &amp;amp; mac app are selected.&lt;/li&gt;
+&lt;/ol&gt;
+
+&lt;p&gt;&lt;img src=&#34;https://tolar.town/posts/2020/04/13/screensavers/4. target membership.png&#34; alt=&#34;Fix target membership&#34; /&gt;
+&lt;em&gt;Fix target membership&lt;/em&gt;
+&lt;br/&gt;&lt;br/&gt;&lt;/p&gt;
+
+&lt;p&gt;You&amp;rsquo;ll need to fake the animation in the mac app. Here is some stub code for a view controller (this should only have the mac app as a target):&lt;/p&gt;
+
+&lt;pre&gt;&lt;code class=&#34;language-swift&#34;&gt;import AppKit
+
+class PreviewViewController: NSViewController {
+    var screensaverView: GreenSquareScreenSaverView? = nil
+    
+    var timer: Timer? = nil
+    
+    var isAnimating: Bool = false {
+        didSet {
+            toggleAnimationTimer()
+        }
+    }
+    
+    override func loadView() {
+        screensaverView = GreenSquareScreenSaverView(frame: CGRect.zero, isPreview: true)
+        self.view = screensaverView ?? NSView()
+    }
+    
+    override func viewDidAppear() {
+        super.viewDidAppear()
+        
+        isAnimating = true
+    }
+    
+    override func viewWillDisappear() {
+        super.viewWillDisappear()
+        
+        isAnimating = false
+    }
+    
+    private func toggleAnimationTimer() {
+        if isAnimating {
+            if timer == nil {
+                timer = Timer.scheduledTimer(withTimeInterval: 1/30.0, repeats: true) { [weak self] (_) in
+                    self?.animate()
+                }
+            }
+        } else {
+            if let timer = timer {
+                timer.invalidate()
+                self.timer = nil
+            }
+        }
+    }
+    
+    func animate() {
+        if isAnimating, let screensaverView = screensaverView {
+            screensaverView.animateOneFrame()
+        }
+    }
+}
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;Then in your &lt;code&gt;AppDelegate&lt;/code&gt;, you can instantiate your &lt;code&gt;PreviewViewController&lt;/code&gt; and pass it to the window:&lt;/p&gt;
+
+&lt;pre&gt;&lt;code class=&#34;language-swift&#34;&gt;import Cocoa
+
+@NSApplicationMain
+class AppDelegate: NSObject, NSApplicationDelegate {
+
+    var window: NSWindow!
+    var previewViewController: PreviewViewController?
+
+    func applicationDidFinishLaunching(_ aNotification: Notification) {
+        let previewViewController = PreviewViewController()
+        self.previewViewController = previewViewController
+
+        // Create the window and set the content view. 
+        window = NSWindow(
+            contentRect: NSRect(x: 0, y: 0, width: 800, height: 600),
+            styleMask: [.titled, .closable, .miniaturizable, .resizable, .fullSizeContentView],
+            backing: .buffered, defer: false)
+        window.center()
+        window.setFrameAutosaveName(&amp;quot;Main Window&amp;quot;)
+        window.contentView = previewViewController.view
+        window.makeKeyAndOrderFront(nil)
+    }
+}
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;Now if you build &amp;amp; run the Preview mac app, you&amp;rsquo;ll have your screensaver running inside the app, and tied to Xcode for debugging, stepping through code, troubleshooting, etc.&lt;/p&gt;
+
+&lt;p&gt;You should see a single window with a black background color.&lt;/p&gt;
+
+&lt;h1 id=&#34;write-code&#34;&gt;Write code!&lt;/h1&gt;
+
+&lt;p&gt;If you want to eventually port your code to iOS or tvOS, you may want to stick with something like layers (CALayer) that are easy to use cross-platform. But if you&amp;rsquo;re focused on screensavers, AppKit is the mac corollary of UIKit, which you might be familiar with if you&amp;rsquo;ve built iOS apps. &lt;code&gt;NSView&lt;/code&gt; and &lt;code&gt;NSViewController&lt;/code&gt; are your friends!&lt;/p&gt;
+
+&lt;p&gt;For now, let&amp;rsquo;s add a little green square and rotate it, so you don&amp;rsquo;t have to stare at a blank screensaver. Create a new Swift file &lt;code&gt;GreenSquareView&lt;/code&gt;:&lt;/p&gt;
+
+&lt;pre&gt;&lt;code class=&#34;language-swift&#34;&gt;class GreenSquareView: NSView {
+    init() {
+        super.init(frame: .zero)
+        wantsLayer = true
+        layer?.backgroundColor = NSColor.green.cgColor
+    }
+    
+    required init?(coder: NSCoder) {
+        fatalError(&amp;quot;init(coder:) has not been implemented&amp;quot;)
+    }    
+}
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;Let&amp;rsquo;s update a few things in your ScreenSaverView subclass. Create a property:&lt;/p&gt;
+
+&lt;pre&gt;&lt;code class=&#34;language-swift&#34;&gt;let greenSquareView = GreenSquareView()
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;Then, in the &lt;code&gt;init()&lt;/code&gt;, add:&lt;/p&gt;
+
+&lt;pre&gt;&lt;code class=&#34;language-swift&#34;&gt;addSubview(greenSquareView)
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;We&amp;rsquo;ll resize the frame in &lt;code&gt;draw()&lt;/code&gt;:&lt;/p&gt;
+
+&lt;pre&gt;&lt;code class=&#34;language-swift&#34;&gt;    override func draw(_ rect: NSRect) {
+        super.draw(rect)
+        
+        var squareFrame = NSRect.zero
+        squareFrame.size = NSSize(width: 150, height: 150)
+        squareFrame.origin.x = (rect.width - squareFrame.width) / 2.0
+        squareFrame.origin.y = (rect.height - squareFrame.height) / 2.0
+        greenSquareView.frame = squareFrame
+    }
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;And we can animate it in the stub &lt;code&gt;animateOneFrame()&lt;/code&gt;:&lt;/p&gt;
+
+&lt;pre&gt;&lt;code class=&#34;language-swift&#34;&gt;    override func animateOneFrame() {
+        greenSquareView.rotate(byDegrees: 1)
+    }
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;So if we put that together, our &lt;code&gt;GreenSquareScreenSaverView&lt;/code&gt; now looks like:&lt;/p&gt;
+
+&lt;pre&gt;&lt;code class=&#34;language-swift&#34;&gt;import Foundation
+import ScreenSaver
+
+class GreenSquareScreenSaverView: ScreenSaverView {
+    let greenSquareView = GreenSquareView()
+    
+    override init?(frame: CGRect, isPreview: Bool) {
+        super.init(frame: frame, isPreview: isPreview)
+        self.animationTimeInterval = 1 / 30.0
+        addSubview(greenSquareView)
+    }
+    
+    required init?(coder: NSCoder) {
+        fatalError(&amp;quot;init(coder:) has not been implemented&amp;quot;)
+    }
+    
+    override func startAnimation() {
+        super.startAnimation()
+    }
+    
+    override func stopAnimation() {
+        super.stopAnimation()
+    }
+    
+    override func draw(_ rect: NSRect) {
+        super.draw(rect)
+        
+        var squareFrame = NSRect.zero
+        squareFrame.size = NSSize(width: 150, height: 150)
+        squareFrame.origin.x = (rect.width - squareFrame.width) / 2.0
+        squareFrame.origin.y = (rect.height - squareFrame.height) / 2.0
+        greenSquareView.frame = squareFrame
+    }
+    
+    override func animateOneFrame() {
+        greenSquareView.rotate(byDegrees: 1)
+    }
+}
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;h1 id=&#34;animation&#34;&gt;Animation&lt;/h1&gt;
+
+&lt;p&gt;The &lt;code&gt;ScreenSaverView&lt;/code&gt; class offers you a straightforward way to animate, if what you want to do involves regular updates, like a rotating green square. But that should not restrict you from doing your own CoreAnimation or NSAnimation.&lt;/p&gt;
+
+&lt;h1 id=&#34;swift-classes-beware-beware-be-aware&#34;&gt;Swift classes: beware, beware, be aware&lt;/h1&gt;
+
+&lt;p&gt;There&amp;rsquo;s a fun little bug where sometimes when you create a Swift class, macOS will try to instantiate it &lt;em&gt;as a ScreenSaverView&lt;/em&gt;. Your screensaver will quietly crash, but you&amp;rsquo;ll see a black screen. You can dive into the Console.app, where you might find that it&amp;rsquo;s trying to call:
+&lt;code&gt;-[GreenSquare.GreenSquareView initWithFrame:isPreview:]: unrecognized selector sent to instance 0x7fd13af16950&lt;/code&gt;&lt;/p&gt;
+
+&lt;p&gt;Fortunately, there&amp;rsquo;s an easy fix!&lt;/p&gt;
+
+&lt;p&gt;Back in Xcode, select your project on the left, then your screensaver target, then &amp;ldquo;Build Phases&amp;rdquo;. Under &amp;ldquo;Compile Sources&amp;rdquo;, ensure that your ScreenSaverView subclass is the &lt;em&gt;first&lt;/em&gt; Swift file.&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&#34;https://tolar.town/posts/2020/04/13/screensavers/5. compile sources fix.png&#34; alt=&#34;Fix Build Phases&#34; /&gt;
+&lt;em&gt;Fix Build Phases&lt;/em&gt;
+&lt;br/&gt;&lt;br/&gt;&lt;/p&gt;
+
+&lt;h1 id=&#34;code&#34;&gt;Code!&lt;/h1&gt;
+
+&lt;p&gt;The code mentioned here is over on &lt;a href=&#34;https://github.com/rhaining/screensaver-demo&#34;&gt;github.com/rhaining/screensaver-demo&lt;/a&gt;.&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&#34;https://tolar.town/posts/2020/04/13/screensavers/6. app preview.png&#34; alt=&#34;App preview&#34; /&gt;
+&lt;em&gt;App preview&lt;/em&gt;
+&lt;br/&gt;&lt;br/&gt;&lt;/p&gt;
+
+&lt;h1 id=&#34;what-else&#34;&gt;What else?&lt;/h1&gt;
+
+&lt;p&gt;What else do you want to learn? Hit me up: &lt;a href=&#34;mailto:mail@tolar.town&#34;&gt;mail@tolar.town&lt;/a&gt; or on twitter &lt;a href=&#34;https://twitter.com/tolar&#34;&gt;@tolar&lt;/a&gt;.&lt;/p&gt;
+
+&lt;h1 id=&#34;other-screensavers&#34;&gt;Other screensavers&lt;/h1&gt;
+
+&lt;p&gt;I&amp;rsquo;ve published a couple of screensavers this year, if you want to check them out.&lt;/p&gt;
+
+&lt;ul&gt;
+&lt;li&gt;&lt;a href=&#34;https://kindofawesome.com/screensaver/&#34;&gt;Presidential Hopefuls&lt;/a&gt; visualizes polling data in a fun, weird way.&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;https://zooooom.us/&#34;&gt;Zooooom&lt;/a&gt; is a parody of a zoom call that I built with my friend &lt;a href=&#34;https://harperreed.com/&#34;&gt;Harper&lt;/a&gt;. You can check out the source code at &lt;a href=&#34;https://github.com/rhaining/zooooom-screensaver&#34;&gt;github.com/rhaining/zooooom-screensaver&lt;/a&gt;.&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;Check them out and let me know what you think!&lt;/p&gt;
+</description>
+        </item>
+
+      
     
       
       
@@ -377,38 +702,6 @@
 
 &lt;p&gt;&lt;img src=&#34;https://tolar.town/posts/2020/01/27/swamp/gator-head.jpeg&#34; alt=&#34;A gator head&#34; /&gt;
 &lt;em&gt;A gator head I bought at the gift shop&lt;/em&gt;&lt;/p&gt;
-</description>
-        </item>
-
-      
-    
-      
-      
-
-        <item>
-          <title>New Orleans: shopping</title>
-          <link>https://tolar.town/posts/2020/01/27/shopping/</link>
-          <pubDate>Mon, 27 Jan 2020 09:00:04 -0500</pubDate>
-          
-          <guid>https://tolar.town/posts/2020/01/27/shopping/</guid>
-          <description>&lt;p&gt;&lt;img src=&#34;https://tolar.town/posts/2020/01/27/shopping/lapidary-selfie.jpeg&#34; alt=&#34;Selfie at the Lapidary&#34; /&gt;
-&lt;em&gt;Selfie at the Lapidary&lt;/em&gt;
-&lt;br/&gt;&lt;br/&gt;&lt;/p&gt;
-
-&lt;p&gt;&lt;img src=&#34;https://tolar.town/posts/2020/01/27/shopping/pink-jackets.jpeg&#34; alt=&#34;Tolar &amp;amp; Clint trying on some jackets&#34; /&gt;
-&lt;em&gt;Tolar &amp;amp; Clint trying on some jackets&lt;/em&gt;
-&lt;br/&gt;&lt;br/&gt;&lt;/p&gt;
-
-&lt;p&gt;&lt;img src=&#34;https://tolar.town/posts/2020/01/27/shopping/adam.jpeg&#34; alt=&#34;Adam with his new face&#34; /&gt;
-&lt;em&gt;Adam with his new face&lt;/em&gt;
-&lt;br/&gt;&lt;br/&gt;&lt;/p&gt;
-
-&lt;p&gt;&lt;img src=&#34;https://tolar.town/posts/2020/01/27/shopping/artomat.jpeg&#34; alt=&#34;Artomat&#34; /&gt;
-&lt;em&gt;I found an Artomat outside of the fantastic restaurant Compère Lapin. &lt;a href=&#34;https://www.artomat.org/&#34;&gt;Artomat&lt;/a&gt; turns old cigarette vending machines into art vending machines. For $5, you get a small piece of art. Super cool. Plus, it&amp;rsquo;s from Winston-Salem, North Carolina!&lt;/em&gt;
-&lt;br/&gt;&lt;br/&gt;&lt;/p&gt;
-
-&lt;p&gt;&lt;img src=&#34;https://tolar.town/posts/2020/01/27/shopping/artomat-carolina-corona.jpeg&#34; alt=&#34;Artomat: Carolina Corona&#34; /&gt;
-&lt;em&gt;From the Artomat, I bought a painting created by &lt;a href=&#34;https://www.coronafineart.com/&#34;&gt;Carolina Corona&lt;/a&gt;&lt;/em&gt;&lt;/p&gt;
 </description>
         </item>
 
