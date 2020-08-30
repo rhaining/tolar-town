@@ -1,14 +1,14 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes" ?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
-    <title>tech on Tolar Town</title>
-    <link>https://tolar.town/tags/tech/</link>
-    <description>Recent content in tech on Tolar Town</description>
+    <title>life on Tolar Town</title>
+    <link>https://tolar.town/tags/life/</link>
+    <description>Recent content in life on Tolar Town</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
     <lastBuildDate>Sat, 29 Aug 2020 18:28:00 -0400</lastBuildDate>
     
-	<atom:link href="https://tolar.town/tags/tech/index.xml" rel="self" type="application/rss+xml" />
+	<atom:link href="https://tolar.town/tags/life/index.xml" rel="self" type="application/rss+xml" />
     
     
     <item>
@@ -18,17 +18,6 @@
       
       <guid>https://tolar.town/posts/2020/08/29/the-days-before-the-ipad/</guid>
       <description>January 27, 2010  Steve Jobs announced to the world a new product: the iPad. I had been the lead developer for a burgeoning motley crew of software developers learning on the job how to create iPhone apps at the storied magazine powerhouse Condé Nast. Our biggest success by far had been Epicurious, which allowed folks to find recipes on the go, build shopping lists, and then cook those recipes at home (RIP printers).</description>
-    </item>
-    
-    <item>
-      <title>Let a million screensavers bloom</title>
-      <link>https://tolar.town/posts/2020/04/13/screensavers/</link>
-      <pubDate>Mon, 13 Apr 2020 17:04:00 -0400</pubDate>
-      
-      <guid>https://tolar.town/posts/2020/04/13/screensavers/</guid>
-      <description>This is nominally a &amp;ldquo;travel blog&amp;rdquo;, or something, but I also write code, and sometimes screensavers, so I thought I&amp;rsquo;d try putting this out there to see how it goes. Let me know what you think! mail@tolar.town or on twitter @tolar.
-Writing screensavers for macs is a little weird. But once you get past a few oddities, it can be lots of fun!
-For purposes of this post, I assume you have some knowledge of and experience with Xcode and Swift.</description>
     </item>
     
   </channel>
