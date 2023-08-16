@@ -29,15 +29,13 @@
 		<meta property="og:title" content="Let a million screensavers bloom" />
 <meta property="og:description" content="Writing screensavers in Swift for fun and … profit?" />
 <meta property="og:type" content="article" />
-<meta property="og:url" content="https://tolar.town/posts/2020/04/13/screensavers/" />
-
-<meta property="og:image" content="https://tolar.town/posts/2020/04/13/screensavers/6.%20app%20preview.png" />
+<meta property="og:url" content="https://tolar.town/posts/2020/04/13/screensavers/" /><meta property="og:image" content="https://tolar.town/posts/2020/04/13/screensavers/6.%20app%20preview.png" /><meta property="article:section" content="posts" />
 <meta property="article:published_time" content="2020-04-13T17:04:00-04:00" />
 <meta property="article:modified_time" content="2020-04-13T17:04:00-04:00" />
 
 		<meta name="author" content="Robert Tolar Haining">
 		<meta name="description" content="The travel blog of Robert Tolar Haining">
-		<meta name="generator" content="Hugo 0.58.3" />
+		<meta name="generator" content="Hugo 0.117.0">
 		<title>Let a million screensavers bloom &middot; Tolar Town</title>
 		<link rel="shortcut icon" href="https://tolar.town/images/favicon.ico">
 		<link rel="stylesheet" href="https://tolar.town/css/style.css">
@@ -112,333 +110,253 @@
                 
                   
                     <div id="toc">
-                      <nav id="TableOfContents">
-<ul>
-<li><a href="#setup-your-project">Setup your project</a></li>
-<li><a href="#install-your-screensaver">Install your screensaver</a></li>
-<li><a href="#add-a-mac-app-target-to-make-testing-easier">Add a mac app target to make testing easier</a></li>
-<li><a href="#write-code">Write code!</a></li>
-<li><a href="#animation">Animation</a></li>
-<li><a href="#swift-classes-beware-beware-be-aware">Swift classes: beware, beware, be aware</a></li>
-<li><a href="#code">Code!</a></li>
-<li><a href="#what-else">What else?</a></li>
-<li><a href="#other-screensavers">Other screensavers</a></li>
-</ul>
-</nav>
+                      <nav id="TableOfContents"></nav>
                     </div>
                   
                 
                 <section id="post-body">
-                    
-
-<p>This is nominally a &ldquo;travel blog&rdquo;, or something, but I also write code, and sometimes screensavers, so I thought I&rsquo;d try putting this out there to see how it goes. Let me know what you think! <a href="mailto:mail@tolar.town">mail@tolar.town</a> or on twitter <a href="https://twitter.com/tolar">@tolar</a>.</p>
-
+                    <p>This is nominally a &ldquo;travel blog&rdquo;, or something, but I also write code, and sometimes screensavers, so I thought I&rsquo;d try putting this out there to see how it goes. Let me know what you think! <a href="mailto:mail@tolar.town">mail@tolar.town</a> or on twitter <a href="https://twitter.com/tolar">@tolar</a>.</p>
 <p>Writing screensavers for macs is a little weird. But once you get past a few oddities, it can be lots of fun!</p>
-
 <p>For purposes of this post, I assume you have some knowledge of and experience with Xcode and Swift. We&rsquo;ll build a simple screensaver that spins a green square.</p>
-
 <p>If you want to go ahead and download the complete source, you can find it <a href="https://github.com/rhaining/screensaver-demo">on GitHub</a>.</p>
-
 <h1 id="setup-your-project">Setup your project</h1>
-
 <p>Let&rsquo;s start with your Xcode project setup before we dive in to code: File -&gt; New project. In the project template selection screen, select macOS -&gt; Screen Saver.</p>
-
-<p><img src="/posts/2020/04/13/screensavers/1. project selection.png" alt="Project selection" />
+<p>![Project selection](/posts/2020/04/13/screensavers/1. project selection.png)
 <em>Project selection</em>
-<br/><br/></p>
-
+<!-- raw HTML omitted --><!-- raw HTML omitted --></p>
 <p>Continue with setup until you have a project. Xcode will generate an Objective-c subclass of <code>ScreenSaverView</code> for you, but that&rsquo;s no fun. Swift is the new hot thing, right? Go ahead and delete those files (<code>***View.h</code> and <code>***View.m</code>). Create a new Swift file. Here we call it <code>GreenSquareScreenSaverView</code>, but you can name it as you please. (Note: if you change the name of the class, be sure to also update it in your Info.plist &ldquo;Principal class&rdquo; key.) You can use this stub code:</p>
-
-<pre><code class="language-swift">import Foundation
-import ScreenSaver
-
-class GreenSquareScreenSaverView: ScreenSaverView {
-    override init?(frame: CGRect, isPreview: Bool) {
-        super.init(frame: frame, isPreview: isPreview)
-        self.animationTimeInterval = 1 / 30.0
-    }
-    
-    required init?(coder: NSCoder) {
-        fatalError(&quot;init(coder:) has not been implemented&quot;)
-    }
-    
-    override func startAnimation() {
-        super.startAnimation()
-    }
-    
-    override func stopAnimation() {
-        super.stopAnimation()
-    }
-    
-    override func draw(_ rect: NSRect) {
-        super.draw(rect)
-    }
-    
-    override func animateOneFrame() {
-    }    
-}
-</code></pre>
-
-<p>Congrats, you have a functional screensaver! It might not do much apart from showing a blank screen, but it&rsquo;ll build.</p>
-
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-swift" data-lang="swift"><span style="display:flex;"><span><span style="color:#66d9ef">import</span> <span style="color:#a6e22e">Foundation</span>
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">import</span> <span style="color:#a6e22e">ScreenSaver</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">class</span> <span style="color:#a6e22e">GreenSquareScreenSaverView</span>: ScreenSaverView {
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">override</span> <span style="color:#66d9ef">init</span>?(frame: CGRect, isPreview: Bool) {
+</span></span><span style="display:flex;"><span>        <span style="color:#66d9ef">super</span>.<span style="color:#66d9ef">init</span>(frame: frame, isPreview: isPreview)
+</span></span><span style="display:flex;"><span>        <span style="color:#66d9ef">self</span>.animationTimeInterval = <span style="color:#ae81ff">1</span> <span style="color:#f92672">/</span> <span style="color:#ae81ff">30.0</span>
+</span></span><span style="display:flex;"><span>    }
+</span></span><span style="display:flex;"><span>    
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">required</span> <span style="color:#66d9ef">init</span>?(coder: NSCoder) {
+</span></span><span style="display:flex;"><span>        fatalError(<span style="color:#e6db74">&#34;init(coder:) has not been implemented&#34;</span>)
+</span></span><span style="display:flex;"><span>    }
+</span></span><span style="display:flex;"><span>    
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">override</span> <span style="color:#66d9ef">func</span> <span style="color:#a6e22e">startAnimation</span>() {
+</span></span><span style="display:flex;"><span>        <span style="color:#66d9ef">super</span>.startAnimation()
+</span></span><span style="display:flex;"><span>    }
+</span></span><span style="display:flex;"><span>    
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">override</span> <span style="color:#66d9ef">func</span> <span style="color:#a6e22e">stopAnimation</span>() {
+</span></span><span style="display:flex;"><span>        <span style="color:#66d9ef">super</span>.stopAnimation()
+</span></span><span style="display:flex;"><span>    }
+</span></span><span style="display:flex;"><span>    
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">override</span> <span style="color:#66d9ef">func</span> <span style="color:#a6e22e">draw</span>(<span style="color:#66d9ef">_</span> rect: NSRect) {
+</span></span><span style="display:flex;"><span>        <span style="color:#66d9ef">super</span>.draw(rect)
+</span></span><span style="display:flex;"><span>    }
+</span></span><span style="display:flex;"><span>    
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">override</span> <span style="color:#66d9ef">func</span> <span style="color:#a6e22e">animateOneFrame</span>() {
+</span></span><span style="display:flex;"><span>    }    
+</span></span><span style="display:flex;"><span>}
+</span></span></code></pre></div><p>Congrats, you have a functional screensaver! It might not do much apart from showing a blank screen, but it&rsquo;ll build.</p>
 <h1 id="install-your-screensaver">Install your screensaver</h1>
-
 <p>One major difference between screensavers and apps is that you can&rsquo;t simply &ldquo;Run&rdquo; from Xcode. To install the screensaver:</p>
-
 <ol>
 <li>Build from Xcode.</li>
 <li>Find the screensaver file under &ldquo;Products&rdquo;.</li>
 <li>Right-click on it &amp; select &ldquo;Open with External Editor.&rdquo;</li>
 <li>This will open System Preferences and install the screensaver. (The first time, you&rsquo;ll have to select the screensaver here).</li>
 </ol>
-
-<p><img src="/posts/2020/04/13/screensavers/2. screensaver install.png" alt="Install the screensaver" />
+<p>![Install the screensaver](/posts/2020/04/13/screensavers/2. screensaver install.png)
 <em>Install the screensaver</em>
-<br/><br/></p>
-
+<!-- raw HTML omitted --><!-- raw HTML omitted --></p>
 <h1 id="add-a-mac-app-target-to-make-testing-easier">Add a mac app target to make testing easier</h1>
-
 <p>Troubleshooting screensavers is a pain in the butt. I highly recommend doing the bulk of your development using a mac app target. Then make sure to test it in screensaver mode, as this is treated a bit differently by macOS.</p>
-
 <p>First, add a new target:</p>
-
 <ol>
 <li>Select your project on the left.</li>
 <li>Under &ldquo;Targets&rdquo;, at the bottom select the &ldquo;+&rdquo; button.</li>
 <li>Under &ldquo;macOS&rdquo;, select &ldquo;App&rdquo;.</li>
 <li>Continue with the prompts. I suggest naming it something like &ldquo;Preview&rdquo;.</li>
 </ol>
-
-<p><img src="/posts/2020/04/13/screensavers/3. mac target.png" alt="Setup the Mac target" />
-<br/><br/></p>
-
+<p>![Setup the Mac target](/posts/2020/04/13/screensavers/3. mac target.png)
+<!-- raw HTML omitted --><!-- raw HTML omitted --></p>
 <p>Hook up your mac app to the screensaver code you have. We need to expose the screensaver view class (and any other code you have written or will write):</p>
-
 <ol>
 <li>Select the file(s) on the left.</li>
 <li>On the right, select the File Inspector icon</li>
 <li>Under &ldquo;Target Membership&rdquo;, make sure your screensaver &amp; mac app are selected.</li>
 </ol>
-
-<p><img src="/posts/2020/04/13/screensavers/4. target membership.png" alt="Fix target membership" />
+<p>![Fix target membership](/posts/2020/04/13/screensavers/4. target membership.png)
 <em>Fix target membership</em>
-<br/><br/></p>
-
+<!-- raw HTML omitted --><!-- raw HTML omitted --></p>
 <p>You&rsquo;ll need to fake the animation in the mac app. Here is some stub code for a view controller (this should only have the mac app as a target):</p>
-
-<pre><code class="language-swift">import AppKit
-
-class PreviewViewController: NSViewController {
-    var screensaverView: GreenSquareScreenSaverView? = nil
-    
-    var timer: Timer? = nil
-    
-    var isAnimating: Bool = false {
-        didSet {
-            toggleAnimationTimer()
-        }
-    }
-    
-    override func loadView() {
-        screensaverView = GreenSquareScreenSaverView(frame: CGRect.zero, isPreview: true)
-        self.view = screensaverView ?? NSView()
-    }
-    
-    override func viewDidAppear() {
-        super.viewDidAppear()
-        
-        isAnimating = true
-    }
-    
-    override func viewWillDisappear() {
-        super.viewWillDisappear()
-        
-        isAnimating = false
-    }
-    
-    private func toggleAnimationTimer() {
-        if isAnimating {
-            if timer == nil {
-                timer = Timer.scheduledTimer(withTimeInterval: 1/30.0, repeats: true) { [weak self] (_) in
-                    self?.animate()
-                }
-            }
-        } else {
-            if let timer = timer {
-                timer.invalidate()
-                self.timer = nil
-            }
-        }
-    }
-    
-    func animate() {
-        if isAnimating, let screensaverView = screensaverView {
-            screensaverView.animateOneFrame()
-        }
-    }
-}
-</code></pre>
-
-<p>Then in your <code>AppDelegate</code>, you can instantiate your <code>PreviewViewController</code> and pass it to the window:</p>
-
-<pre><code class="language-swift">import Cocoa
-
-@NSApplicationMain
-class AppDelegate: NSObject, NSApplicationDelegate {
-
-    var window: NSWindow!
-    var previewViewController: PreviewViewController?
-
-    func applicationDidFinishLaunching(_ aNotification: Notification) {
-        let previewViewController = PreviewViewController()
-        self.previewViewController = previewViewController
-
-        // Create the window and set the content view. 
-        window = NSWindow(
-            contentRect: NSRect(x: 0, y: 0, width: 800, height: 600),
-            styleMask: [.titled, .closable, .miniaturizable, .resizable, .fullSizeContentView],
-            backing: .buffered, defer: false)
-        window.center()
-        window.setFrameAutosaveName(&quot;Main Window&quot;)
-        window.contentView = previewViewController.view
-        window.makeKeyAndOrderFront(nil)
-    }
-}
-</code></pre>
-
-<p>Now if you build &amp; run the Preview mac app, you&rsquo;ll have your screensaver running inside the app, and tied to Xcode for debugging, stepping through code, troubleshooting, etc.</p>
-
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-swift" data-lang="swift"><span style="display:flex;"><span><span style="color:#66d9ef">import</span> <span style="color:#a6e22e">AppKit</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">class</span> <span style="color:#a6e22e">PreviewViewController</span>: NSViewController {
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">var</span> screensaverView: GreenSquareScreenSaverView? = <span style="color:#66d9ef">nil</span>
+</span></span><span style="display:flex;"><span>    
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">var</span> timer: Timer? = <span style="color:#66d9ef">nil</span>
+</span></span><span style="display:flex;"><span>    
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">var</span> isAnimating: Bool = <span style="color:#66d9ef">false</span> {
+</span></span><span style="display:flex;"><span>        <span style="color:#66d9ef">didSet</span> {
+</span></span><span style="display:flex;"><span>            toggleAnimationTimer()
+</span></span><span style="display:flex;"><span>        }
+</span></span><span style="display:flex;"><span>    }
+</span></span><span style="display:flex;"><span>    
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">override</span> <span style="color:#66d9ef">func</span> <span style="color:#a6e22e">loadView</span>() {
+</span></span><span style="display:flex;"><span>        screensaverView = GreenSquareScreenSaverView(frame: CGRect.zero, isPreview: <span style="color:#66d9ef">true</span>)
+</span></span><span style="display:flex;"><span>        <span style="color:#66d9ef">self</span>.view = screensaverView ?? NSView()
+</span></span><span style="display:flex;"><span>    }
+</span></span><span style="display:flex;"><span>    
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">override</span> <span style="color:#66d9ef">func</span> <span style="color:#a6e22e">viewDidAppear</span>() {
+</span></span><span style="display:flex;"><span>        <span style="color:#66d9ef">super</span>.viewDidAppear()
+</span></span><span style="display:flex;"><span>        
+</span></span><span style="display:flex;"><span>        isAnimating = <span style="color:#66d9ef">true</span>
+</span></span><span style="display:flex;"><span>    }
+</span></span><span style="display:flex;"><span>    
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">override</span> <span style="color:#66d9ef">func</span> <span style="color:#a6e22e">viewWillDisappear</span>() {
+</span></span><span style="display:flex;"><span>        <span style="color:#66d9ef">super</span>.viewWillDisappear()
+</span></span><span style="display:flex;"><span>        
+</span></span><span style="display:flex;"><span>        isAnimating = <span style="color:#66d9ef">false</span>
+</span></span><span style="display:flex;"><span>    }
+</span></span><span style="display:flex;"><span>    
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">private</span> <span style="color:#66d9ef">func</span> <span style="color:#a6e22e">toggleAnimationTimer</span>() {
+</span></span><span style="display:flex;"><span>        <span style="color:#66d9ef">if</span> isAnimating {
+</span></span><span style="display:flex;"><span>            <span style="color:#66d9ef">if</span> timer == <span style="color:#66d9ef">nil</span> {
+</span></span><span style="display:flex;"><span>                timer = Timer.scheduledTimer(withTimeInterval: <span style="color:#ae81ff">1</span><span style="color:#f92672">/</span><span style="color:#ae81ff">30.0</span>, repeats: <span style="color:#66d9ef">true</span>) { [<span style="color:#66d9ef">weak</span> <span style="color:#66d9ef">self</span>] (<span style="color:#66d9ef">_</span>) <span style="color:#66d9ef">in</span>
+</span></span><span style="display:flex;"><span>                    <span style="color:#66d9ef">self</span>?.animate()
+</span></span><span style="display:flex;"><span>                }
+</span></span><span style="display:flex;"><span>            }
+</span></span><span style="display:flex;"><span>        } <span style="color:#66d9ef">else</span> {
+</span></span><span style="display:flex;"><span>            <span style="color:#66d9ef">if</span> <span style="color:#66d9ef">let</span> timer = timer {
+</span></span><span style="display:flex;"><span>                timer.invalidate()
+</span></span><span style="display:flex;"><span>                <span style="color:#66d9ef">self</span>.timer = <span style="color:#66d9ef">nil</span>
+</span></span><span style="display:flex;"><span>            }
+</span></span><span style="display:flex;"><span>        }
+</span></span><span style="display:flex;"><span>    }
+</span></span><span style="display:flex;"><span>    
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">func</span> <span style="color:#a6e22e">animate</span>() {
+</span></span><span style="display:flex;"><span>        <span style="color:#66d9ef">if</span> isAnimating, <span style="color:#66d9ef">let</span> screensaverView = screensaverView {
+</span></span><span style="display:flex;"><span>            screensaverView.animateOneFrame()
+</span></span><span style="display:flex;"><span>        }
+</span></span><span style="display:flex;"><span>    }
+</span></span><span style="display:flex;"><span>}
+</span></span></code></pre></div><p>Then in your <code>AppDelegate</code>, you can instantiate your <code>PreviewViewController</code> and pass it to the window:</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-swift" data-lang="swift"><span style="display:flex;"><span><span style="color:#66d9ef">import</span> <span style="color:#a6e22e">Cocoa</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">@NSApplicationMain</span>
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">class</span> <span style="color:#a6e22e">AppDelegate</span>: NSObject, NSApplicationDelegate {
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">var</span> window: NSWindow!
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">var</span> previewViewController: PreviewViewController?
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">func</span> <span style="color:#a6e22e">applicationDidFinishLaunching</span>(<span style="color:#66d9ef">_</span> aNotification: Notification) {
+</span></span><span style="display:flex;"><span>        <span style="color:#66d9ef">let</span> previewViewController = PreviewViewController()
+</span></span><span style="display:flex;"><span>        <span style="color:#66d9ef">self</span>.previewViewController = previewViewController
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>        <span style="color:#75715e">// Create the window and set the content view. </span>
+</span></span><span style="display:flex;"><span>        window = NSWindow(
+</span></span><span style="display:flex;"><span>            contentRect: NSRect(x: <span style="color:#ae81ff">0</span>, y: <span style="color:#ae81ff">0</span>, width: <span style="color:#ae81ff">800</span>, height: <span style="color:#ae81ff">600</span>),
+</span></span><span style="display:flex;"><span>            styleMask: [.titled, .closable, .miniaturizable, .resizable, .fullSizeContentView],
+</span></span><span style="display:flex;"><span>            backing: .buffered, <span style="color:#66d9ef">defer</span>: <span style="color:#66d9ef">false</span>)
+</span></span><span style="display:flex;"><span>        window.center()
+</span></span><span style="display:flex;"><span>        window.setFrameAutosaveName(<span style="color:#e6db74">&#34;Main Window&#34;</span>)
+</span></span><span style="display:flex;"><span>        window.contentView = previewViewController.view
+</span></span><span style="display:flex;"><span>        window.makeKeyAndOrderFront(<span style="color:#66d9ef">nil</span>)
+</span></span><span style="display:flex;"><span>    }
+</span></span><span style="display:flex;"><span>}
+</span></span></code></pre></div><p>Now if you build &amp; run the Preview mac app, you&rsquo;ll have your screensaver running inside the app, and tied to Xcode for debugging, stepping through code, troubleshooting, etc.</p>
 <p>You should see a single window with a black background color.</p>
-
 <h1 id="write-code">Write code!</h1>
-
 <p>If you want to eventually port your code to iOS or tvOS, you may want to stick with something like layers (CALayer) that are easy to use cross-platform. But if you&rsquo;re focused on screensavers, AppKit is the mac corollary of UIKit, which you might be familiar with if you&rsquo;ve built iOS apps. <code>NSView</code> and <code>NSViewController</code> are your friends!</p>
-
 <p>For now, let&rsquo;s add a little green square and rotate it, so you don&rsquo;t have to stare at a blank screensaver. Create a new Swift file <code>GreenSquareView</code>:</p>
-
-<pre><code class="language-swift">class GreenSquareView: NSView {
-    init() {
-        super.init(frame: .zero)
-        wantsLayer = true
-        layer?.backgroundColor = NSColor.green.cgColor
-    }
-    
-    required init?(coder: NSCoder) {
-        fatalError(&quot;init(coder:) has not been implemented&quot;)
-    }    
-}
-</code></pre>
-
-<p>Let&rsquo;s update a few things in your ScreenSaverView subclass. Create a property:</p>
-
-<pre><code class="language-swift">let greenSquareView = GreenSquareView()
-</code></pre>
-
-<p>Then, in the <code>init()</code>, add:</p>
-
-<pre><code class="language-swift">addSubview(greenSquareView)
-</code></pre>
-
-<p>We&rsquo;ll resize the frame in <code>draw()</code>:</p>
-
-<pre><code class="language-swift">    override func draw(_ rect: NSRect) {
-        super.draw(rect)
-        
-        var squareFrame = NSRect.zero
-        squareFrame.size = NSSize(width: 150, height: 150)
-        squareFrame.origin.x = (rect.width - squareFrame.width) / 2.0
-        squareFrame.origin.y = (rect.height - squareFrame.height) / 2.0
-        greenSquareView.frame = squareFrame
-    }
-</code></pre>
-
-<p>And we can animate it in the stub <code>animateOneFrame()</code>:</p>
-
-<pre><code class="language-swift">    override func animateOneFrame() {
-        greenSquareView.rotate(byDegrees: 1)
-    }
-</code></pre>
-
-<p>So if we put that together, our <code>GreenSquareScreenSaverView</code> now looks like:</p>
-
-<pre><code class="language-swift">import Foundation
-import ScreenSaver
-
-class GreenSquareScreenSaverView: ScreenSaverView {
-    let greenSquareView = GreenSquareView()
-    
-    override init?(frame: CGRect, isPreview: Bool) {
-        super.init(frame: frame, isPreview: isPreview)
-        self.animationTimeInterval = 1 / 30.0
-        addSubview(greenSquareView)
-    }
-    
-    required init?(coder: NSCoder) {
-        fatalError(&quot;init(coder:) has not been implemented&quot;)
-    }
-    
-    override func startAnimation() {
-        super.startAnimation()
-    }
-    
-    override func stopAnimation() {
-        super.stopAnimation()
-    }
-    
-    override func draw(_ rect: NSRect) {
-        super.draw(rect)
-        
-        var squareFrame = NSRect.zero
-        squareFrame.size = NSSize(width: 150, height: 150)
-        squareFrame.origin.x = (rect.width - squareFrame.width) / 2.0
-        squareFrame.origin.y = (rect.height - squareFrame.height) / 2.0
-        greenSquareView.frame = squareFrame
-    }
-    
-    override func animateOneFrame() {
-        greenSquareView.rotate(byDegrees: 1)
-    }
-}
-</code></pre>
-
-<h1 id="animation">Animation</h1>
-
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-swift" data-lang="swift"><span style="display:flex;"><span><span style="color:#66d9ef">class</span> <span style="color:#a6e22e">GreenSquareView</span>: NSView {
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">init</span>() {
+</span></span><span style="display:flex;"><span>        <span style="color:#66d9ef">super</span>.<span style="color:#66d9ef">init</span>(frame: .zero)
+</span></span><span style="display:flex;"><span>        wantsLayer = <span style="color:#66d9ef">true</span>
+</span></span><span style="display:flex;"><span>        layer?.backgroundColor = NSColor.green.cgColor
+</span></span><span style="display:flex;"><span>    }
+</span></span><span style="display:flex;"><span>    
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">required</span> <span style="color:#66d9ef">init</span>?(coder: NSCoder) {
+</span></span><span style="display:flex;"><span>        fatalError(<span style="color:#e6db74">&#34;init(coder:) has not been implemented&#34;</span>)
+</span></span><span style="display:flex;"><span>    }    
+</span></span><span style="display:flex;"><span>}
+</span></span></code></pre></div><p>Let&rsquo;s update a few things in your ScreenSaverView subclass. Create a property:</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-swift" data-lang="swift"><span style="display:flex;"><span><span style="color:#66d9ef">let</span> greenSquareView = GreenSquareView()
+</span></span></code></pre></div><p>Then, in the <code>init()</code>, add:</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-swift" data-lang="swift"><span style="display:flex;"><span>addSubview(greenSquareView)
+</span></span></code></pre></div><p>We&rsquo;ll resize the frame in <code>draw()</code>:</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-swift" data-lang="swift"><span style="display:flex;"><span>    <span style="color:#66d9ef">override</span> <span style="color:#66d9ef">func</span> <span style="color:#a6e22e">draw</span>(<span style="color:#66d9ef">_</span> rect: NSRect) {
+</span></span><span style="display:flex;"><span>        <span style="color:#66d9ef">super</span>.draw(rect)
+</span></span><span style="display:flex;"><span>        
+</span></span><span style="display:flex;"><span>        <span style="color:#66d9ef">var</span> squareFrame = NSRect.zero
+</span></span><span style="display:flex;"><span>        squareFrame.size = NSSize(width: <span style="color:#ae81ff">150</span>, height: <span style="color:#ae81ff">150</span>)
+</span></span><span style="display:flex;"><span>        squareFrame.origin.x = (rect.width <span style="color:#f92672">-</span> squareFrame.width) <span style="color:#f92672">/</span> <span style="color:#ae81ff">2.0</span>
+</span></span><span style="display:flex;"><span>        squareFrame.origin.y = (rect.height <span style="color:#f92672">-</span> squareFrame.height) <span style="color:#f92672">/</span> <span style="color:#ae81ff">2.0</span>
+</span></span><span style="display:flex;"><span>        greenSquareView.frame = squareFrame
+</span></span><span style="display:flex;"><span>    }
+</span></span></code></pre></div><p>And we can animate it in the stub <code>animateOneFrame()</code>:</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-swift" data-lang="swift"><span style="display:flex;"><span>    <span style="color:#66d9ef">override</span> <span style="color:#66d9ef">func</span> <span style="color:#a6e22e">animateOneFrame</span>() {
+</span></span><span style="display:flex;"><span>        greenSquareView.rotate(byDegrees: <span style="color:#ae81ff">1</span>)
+</span></span><span style="display:flex;"><span>    }
+</span></span></code></pre></div><p>So if we put that together, our <code>GreenSquareScreenSaverView</code> now looks like:</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-swift" data-lang="swift"><span style="display:flex;"><span><span style="color:#66d9ef">import</span> <span style="color:#a6e22e">Foundation</span>
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">import</span> <span style="color:#a6e22e">ScreenSaver</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">class</span> <span style="color:#a6e22e">GreenSquareScreenSaverView</span>: ScreenSaverView {
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">let</span> greenSquareView = GreenSquareView()
+</span></span><span style="display:flex;"><span>    
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">override</span> <span style="color:#66d9ef">init</span>?(frame: CGRect, isPreview: Bool) {
+</span></span><span style="display:flex;"><span>        <span style="color:#66d9ef">super</span>.<span style="color:#66d9ef">init</span>(frame: frame, isPreview: isPreview)
+</span></span><span style="display:flex;"><span>        <span style="color:#66d9ef">self</span>.animationTimeInterval = <span style="color:#ae81ff">1</span> <span style="color:#f92672">/</span> <span style="color:#ae81ff">30.0</span>
+</span></span><span style="display:flex;"><span>        addSubview(greenSquareView)
+</span></span><span style="display:flex;"><span>    }
+</span></span><span style="display:flex;"><span>    
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">required</span> <span style="color:#66d9ef">init</span>?(coder: NSCoder) {
+</span></span><span style="display:flex;"><span>        fatalError(<span style="color:#e6db74">&#34;init(coder:) has not been implemented&#34;</span>)
+</span></span><span style="display:flex;"><span>    }
+</span></span><span style="display:flex;"><span>    
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">override</span> <span style="color:#66d9ef">func</span> <span style="color:#a6e22e">startAnimation</span>() {
+</span></span><span style="display:flex;"><span>        <span style="color:#66d9ef">super</span>.startAnimation()
+</span></span><span style="display:flex;"><span>    }
+</span></span><span style="display:flex;"><span>    
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">override</span> <span style="color:#66d9ef">func</span> <span style="color:#a6e22e">stopAnimation</span>() {
+</span></span><span style="display:flex;"><span>        <span style="color:#66d9ef">super</span>.stopAnimation()
+</span></span><span style="display:flex;"><span>    }
+</span></span><span style="display:flex;"><span>    
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">override</span> <span style="color:#66d9ef">func</span> <span style="color:#a6e22e">draw</span>(<span style="color:#66d9ef">_</span> rect: NSRect) {
+</span></span><span style="display:flex;"><span>        <span style="color:#66d9ef">super</span>.draw(rect)
+</span></span><span style="display:flex;"><span>        
+</span></span><span style="display:flex;"><span>        <span style="color:#66d9ef">var</span> squareFrame = NSRect.zero
+</span></span><span style="display:flex;"><span>        squareFrame.size = NSSize(width: <span style="color:#ae81ff">150</span>, height: <span style="color:#ae81ff">150</span>)
+</span></span><span style="display:flex;"><span>        squareFrame.origin.x = (rect.width <span style="color:#f92672">-</span> squareFrame.width) <span style="color:#f92672">/</span> <span style="color:#ae81ff">2.0</span>
+</span></span><span style="display:flex;"><span>        squareFrame.origin.y = (rect.height <span style="color:#f92672">-</span> squareFrame.height) <span style="color:#f92672">/</span> <span style="color:#ae81ff">2.0</span>
+</span></span><span style="display:flex;"><span>        greenSquareView.frame = squareFrame
+</span></span><span style="display:flex;"><span>    }
+</span></span><span style="display:flex;"><span>    
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">override</span> <span style="color:#66d9ef">func</span> <span style="color:#a6e22e">animateOneFrame</span>() {
+</span></span><span style="display:flex;"><span>        greenSquareView.rotate(byDegrees: <span style="color:#ae81ff">1</span>)
+</span></span><span style="display:flex;"><span>    }
+</span></span><span style="display:flex;"><span>}
+</span></span></code></pre></div><h1 id="animation">Animation</h1>
 <p>The <code>ScreenSaverView</code> class offers you a straightforward way to animate, if what you want to do involves regular updates, like a rotating green square. But that should not restrict you from doing your own CoreAnimation or NSAnimation.</p>
-
 <h1 id="swift-classes-beware-beware-be-aware">Swift classes: beware, beware, be aware</h1>
-
 <p>There&rsquo;s a fun little bug where sometimes when you create a Swift class, macOS will try to instantiate it <em>as a ScreenSaverView</em>. Your screensaver will quietly crash, but you&rsquo;ll see a black screen. You can dive into the Console.app, where you might find that it&rsquo;s trying to call:
 <code>-[GreenSquare.GreenSquareView initWithFrame:isPreview:]: unrecognized selector sent to instance 0x7fd13af16950</code></p>
-
 <p>Fortunately, there&rsquo;s an easy fix!</p>
-
 <p>Back in Xcode, select your project on the left, then your screensaver target, then &ldquo;Build Phases&rdquo;. Under &ldquo;Compile Sources&rdquo;, ensure that your ScreenSaverView subclass is the <em>first</em> Swift file.</p>
-
-<p><img src="/posts/2020/04/13/screensavers/5. compile sources fix.png" alt="Fix Build Phases" />
+<p>![Fix Build Phases](/posts/2020/04/13/screensavers/5. compile sources fix.png)
 <em>Fix Build Phases</em>
-<br/><br/></p>
-
+<!-- raw HTML omitted --><!-- raw HTML omitted --></p>
 <h1 id="code">Code!</h1>
-
 <p>The code mentioned here is over on <a href="https://github.com/rhaining/screensaver-demo">github.com/rhaining/screensaver-demo</a>.</p>
-
-<p><img src="/posts/2020/04/13/screensavers/6. app preview.png" alt="App preview" />
+<p>![App preview](/posts/2020/04/13/screensavers/6. app preview.png)
 <em>App preview</em>
-<br/><br/></p>
-
+<!-- raw HTML omitted --><!-- raw HTML omitted --></p>
 <h1 id="what-else">What else?</h1>
-
 <p>What else do you want to learn? Hit me up: <a href="mailto:mail@tolar.town">mail@tolar.town</a> or on twitter <a href="https://twitter.com/tolar">@tolar</a>.</p>
-
 <h1 id="other-screensavers">Other screensavers</h1>
-
 <p>I&rsquo;ve published a couple of screensavers this year, if you want to check them out.</p>
-
 <ul>
 <li><a href="https://kindofawesome.com/screensaver/">Presidential Hopefuls</a> visualizes polling data in a fun, weird way.</li>
 <li><a href="https://zooooom.us/">Zooooom</a> is a parody of a zoom call that I built with my friend <a href="https://harperreed.com/">Harper</a>. You can check out the source code at <a href="https://github.com/rhaining/zooooom-screensaver">github.com/rhaining/zooooom-screensaver</a>.</li>
 </ul>
-
 <p>Check them out and let me know what you think!</p>
 
                 </section>
@@ -459,7 +377,7 @@ class GreenSquareScreenSaverView: ScreenSaverView {
   </p>
   <p class="small">
     
-       © Copyright 2020 <i class="fa fa-heart" aria-hidden="true"></i> Robert Tolar Haining
+       © Copyright 2023 <i class="fa fa-heart" aria-hidden="true"></i> Robert Tolar Haining
     
     
         <span id="social">

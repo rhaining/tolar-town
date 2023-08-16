@@ -1,4 +1,4 @@
-<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>tech on Tolar Town</title>
@@ -6,18 +6,14 @@
     <description>Recent content in tech on Tolar Town</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Sat, 29 Aug 2020 18:28:00 -0400</lastBuildDate>
-    
-	<atom:link href="https://tolar.town/tags/tech/index.xml" rel="self" type="application/rss+xml" />
-    
-    
+    <lastBuildDate>Sat, 29 Aug 2020 18:28:00 -0400</lastBuildDate><atom:link href="https://tolar.town/tags/tech/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>2010: The days before the iPad</title>
       <link>https://tolar.town/posts/2020/08/29/the-days-before-the-ipad/</link>
       <pubDate>Sat, 29 Aug 2020 18:28:00 -0400</pubDate>
       
       <guid>https://tolar.town/posts/2020/08/29/the-days-before-the-ipad/</guid>
-      <description>January 27, 2010  Steve Jobs announced to the world a new product: the iPad. I had been the lead developer for a burgeoning motley crew of software developers learning on the job how to create iPhone apps at the storied magazine powerhouse Condé Nast. Our biggest success by far had been Epicurious, which allowed folks to find recipes on the go, build shopping lists, and then cook those recipes at home (RIP printers).</description>
+      <description>January 27, 2010 Steve Jobs announced to the world a new product: the iPad. I had been the lead developer for a burgeoning motley crew of software developers learning on the job how to create iPhone apps at the storied magazine powerhouse Condé Nast. Our biggest success by far had been Epicurious, which allowed folks to find recipes on the go, build shopping lists, and then cook those recipes at home (RIP printers).</description>
     </item>
     
     <item>
