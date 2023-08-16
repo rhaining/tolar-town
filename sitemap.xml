@@ -2,22 +2,25 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
   xmlns:xhtml="http://www.w3.org/1999/xhtml">
   <url>
+    <loc>https://tolar.town/posts/</loc>
+    <lastmod>2023-08-16T17:10:10-04:00</lastmod>
+  </url><url>
+    <loc>https://tolar.town/posts/2023/08/16/presidential-hopefuls/</loc>
+    <lastmod>2023-08-16T17:10:10-04:00</lastmod>
+  </url><url>
+    <loc>https://tolar.town/tags/</loc>
+    <lastmod>2023-08-16T17:10:10-04:00</lastmod>
+  </url><url>
+    <loc>https://tolar.town/tags/tech/</loc>
+    <lastmod>2023-08-16T17:10:10-04:00</lastmod>
+  </url><url>
+    <loc>https://tolar.town/</loc>
+    <lastmod>2023-08-16T17:10:10-04:00</lastmod>
+  </url><url>
     <loc>https://tolar.town/posts/2020/08/29/the-days-before-the-ipad/</loc>
     <lastmod>2020-08-29T18:28:00-04:00</lastmod>
   </url><url>
     <loc>https://tolar.town/tags/life/</loc>
-    <lastmod>2020-08-29T18:28:00-04:00</lastmod>
-  </url><url>
-    <loc>https://tolar.town/posts/</loc>
-    <lastmod>2020-08-29T18:28:00-04:00</lastmod>
-  </url><url>
-    <loc>https://tolar.town/tags/</loc>
-    <lastmod>2020-08-29T18:28:00-04:00</lastmod>
-  </url><url>
-    <loc>https://tolar.town/tags/tech/</loc>
-    <lastmod>2020-08-29T18:28:00-04:00</lastmod>
-  </url><url>
-    <loc>https://tolar.town/</loc>
     <lastmod>2020-08-29T18:28:00-04:00</lastmod>
   </url><url>
     <loc>https://tolar.town/posts/2020/04/13/screensavers/</loc>
