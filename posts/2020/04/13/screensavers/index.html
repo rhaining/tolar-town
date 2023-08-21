@@ -121,7 +121,7 @@
 <p>If you want to go ahead and download the complete source, you can find it <a href="https://github.com/rhaining/screensaver-demo">on GitHub</a>.</p>
 <h1 id="setup-your-project">Setup your project</h1>
 <p>Let&rsquo;s start with your Xcode project setup before we dive in to code: File -&gt; New project. In the project template selection screen, select macOS -&gt; Screen Saver.</p>
-<p>![Project selection](/posts/2020/04/13/screensavers/1. project selection.png)
+<p><img src="/posts/2020/04/13/screensavers/1.project-selection.png" alt="Project selection">
 <em>Project selection</em>
 <!-- raw HTML omitted --><!-- raw HTML omitted --></p>
 <p>Continue with setup until you have a project. Xcode will generate an Objective-c subclass of <code>ScreenSaverView</code> for you, but that&rsquo;s no fun. Swift is the new hot thing, right? Go ahead and delete those files (<code>***View.h</code> and <code>***View.m</code>). Create a new Swift file. Here we call it <code>GreenSquareScreenSaverView</code>, but you can name it as you please. (Note: if you change the name of the class, be sure to also update it in your Info.plist &ldquo;Principal class&rdquo; key.) You can use this stub code:</p>
@@ -162,7 +162,7 @@
 <li>Right-click on it &amp; select &ldquo;Open with External Editor.&rdquo;</li>
 <li>This will open System Preferences and install the screensaver. (The first time, you&rsquo;ll have to select the screensaver here).</li>
 </ol>
-<p>![Install the screensaver](/posts/2020/04/13/screensavers/2. screensaver install.png)
+<p><img src="/posts/2020/04/13/screensavers/2.screensaver-install.png" alt="Install the screensaver">
 <em>Install the screensaver</em>
 <!-- raw HTML omitted --><!-- raw HTML omitted --></p>
 <h1 id="add-a-mac-app-target-to-make-testing-easier">Add a mac app target to make testing easier</h1>
@@ -174,7 +174,7 @@
 <li>Under &ldquo;macOS&rdquo;, select &ldquo;App&rdquo;.</li>
 <li>Continue with the prompts. I suggest naming it something like &ldquo;Preview&rdquo;.</li>
 </ol>
-<p>![Setup the Mac target](/posts/2020/04/13/screensavers/3. mac target.png)
+<p><img src="/posts/2020/04/13/screensavers/3.mac-target.png" alt="Setup the Mac target">
 <!-- raw HTML omitted --><!-- raw HTML omitted --></p>
 <p>Hook up your mac app to the screensaver code you have. We need to expose the screensaver view class (and any other code you have written or will write):</p>
 <ol>
@@ -182,7 +182,7 @@
 <li>On the right, select the File Inspector icon</li>
 <li>Under &ldquo;Target Membership&rdquo;, make sure your screensaver &amp; mac app are selected.</li>
 </ol>
-<p>![Fix target membership](/posts/2020/04/13/screensavers/4. target membership.png)
+<p><img src="/posts/2020/04/13/screensavers/4.target-membership.png" alt="Fix target membership">
 <em>Fix target membership</em>
 <!-- raw HTML omitted --><!-- raw HTML omitted --></p>
 <p>You&rsquo;ll need to fake the animation in the mac app. Here is some stub code for a view controller (this should only have the mac app as a target):</p>
@@ -341,12 +341,12 @@
 <code>-[GreenSquare.GreenSquareView initWithFrame:isPreview:]: unrecognized selector sent to instance 0x7fd13af16950</code></p>
 <p>Fortunately, there&rsquo;s an easy fix!</p>
 <p>Back in Xcode, select your project on the left, then your screensaver target, then &ldquo;Build Phases&rdquo;. Under &ldquo;Compile Sources&rdquo;, ensure that your ScreenSaverView subclass is the <em>first</em> Swift file.</p>
-<p>![Fix Build Phases](/posts/2020/04/13/screensavers/5. compile sources fix.png)
+<p><img src="/posts/2020/04/13/screensavers/5.compile-sources-fix.png" alt="Fix Build Phases">
 <em>Fix Build Phases</em>
 <!-- raw HTML omitted --><!-- raw HTML omitted --></p>
 <h1 id="code">Code!</h1>
 <p>The code mentioned here is over on <a href="https://github.com/rhaining/screensaver-demo">github.com/rhaining/screensaver-demo</a>.</p>
-<p>![App preview](/posts/2020/04/13/screensavers/6. app preview.png)
+<p><img src="/posts/2020/04/13/screensavers/6.app-preview.png" alt="App preview">
 <em>App preview</em>
 <!-- raw HTML omitted --><!-- raw HTML omitted --></p>
 <h1 id="what-else">What else?</h1>

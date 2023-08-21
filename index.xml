@@ -91,7 +91,7 @@ Early on a Saturday morning, I received a phone call from my good friend Jay. It
 &lt;p&gt;If you want to go ahead and download the complete source, you can find it &lt;a href=&#34;https://github.com/rhaining/screensaver-demo&#34;&gt;on GitHub&lt;/a&gt;.&lt;/p&gt;
 &lt;h1 id=&#34;setup-your-project&#34;&gt;Setup your project&lt;/h1&gt;
 &lt;p&gt;Let&amp;rsquo;s start with your Xcode project setup before we dive in to code: File -&amp;gt; New project. In the project template selection screen, select macOS -&amp;gt; Screen Saver.&lt;/p&gt;
-&lt;p&gt;![Project selection](/posts/2020/04/13/screensavers/1. project selection.png)
+&lt;p&gt;&lt;img src=&#34;https://tolar.town/posts/2020/04/13/screensavers/1.project-selection.png&#34; alt=&#34;Project selection&#34;&gt;
 &lt;em&gt;Project selection&lt;/em&gt;
 &lt;!-- raw HTML omitted --&gt;&lt;!-- raw HTML omitted --&gt;&lt;/p&gt;
 &lt;p&gt;Continue with setup until you have a project. Xcode will generate an Objective-c subclass of &lt;code&gt;ScreenSaverView&lt;/code&gt; for you, but that&amp;rsquo;s no fun. Swift is the new hot thing, right? Go ahead and delete those files (&lt;code&gt;***View.h&lt;/code&gt; and &lt;code&gt;***View.m&lt;/code&gt;). Create a new Swift file. Here we call it &lt;code&gt;GreenSquareScreenSaverView&lt;/code&gt;, but you can name it as you please. (Note: if you change the name of the class, be sure to also update it in your Info.plist &amp;ldquo;Principal class&amp;rdquo; key.) You can use this stub code:&lt;/p&gt;
@@ -132,7 +132,7 @@ Early on a Saturday morning, I received a phone call from my good friend Jay. It
 &lt;li&gt;Right-click on it &amp;amp; select &amp;ldquo;Open with External Editor.&amp;rdquo;&lt;/li&gt;
 &lt;li&gt;This will open System Preferences and install the screensaver. (The first time, you&amp;rsquo;ll have to select the screensaver here).&lt;/li&gt;
 &lt;/ol&gt;
-&lt;p&gt;![Install the screensaver](/posts/2020/04/13/screensavers/2. screensaver install.png)
+&lt;p&gt;&lt;img src=&#34;https://tolar.town/posts/2020/04/13/screensavers/2.screensaver-install.png&#34; alt=&#34;Install the screensaver&#34;&gt;
 &lt;em&gt;Install the screensaver&lt;/em&gt;
 &lt;!-- raw HTML omitted --&gt;&lt;!-- raw HTML omitted --&gt;&lt;/p&gt;
 &lt;h1 id=&#34;add-a-mac-app-target-to-make-testing-easier&#34;&gt;Add a mac app target to make testing easier&lt;/h1&gt;
@@ -144,7 +144,7 @@ Early on a Saturday morning, I received a phone call from my good friend Jay. It
 &lt;li&gt;Under &amp;ldquo;macOS&amp;rdquo;, select &amp;ldquo;App&amp;rdquo;.&lt;/li&gt;
 &lt;li&gt;Continue with the prompts. I suggest naming it something like &amp;ldquo;Preview&amp;rdquo;.&lt;/li&gt;
 &lt;/ol&gt;
-&lt;p&gt;![Setup the Mac target](/posts/2020/04/13/screensavers/3. mac target.png)
+&lt;p&gt;&lt;img src=&#34;https://tolar.town/posts/2020/04/13/screensavers/3.mac-target.png&#34; alt=&#34;Setup the Mac target&#34;&gt;
 &lt;!-- raw HTML omitted --&gt;&lt;!-- raw HTML omitted --&gt;&lt;/p&gt;
 &lt;p&gt;Hook up your mac app to the screensaver code you have. We need to expose the screensaver view class (and any other code you have written or will write):&lt;/p&gt;
 &lt;ol&gt;
@@ -152,7 +152,7 @@ Early on a Saturday morning, I received a phone call from my good friend Jay. It
 &lt;li&gt;On the right, select the File Inspector icon&lt;/li&gt;
 &lt;li&gt;Under &amp;ldquo;Target Membership&amp;rdquo;, make sure your screensaver &amp;amp; mac app are selected.&lt;/li&gt;
 &lt;/ol&gt;
-&lt;p&gt;![Fix target membership](/posts/2020/04/13/screensavers/4. target membership.png)
+&lt;p&gt;&lt;img src=&#34;https://tolar.town/posts/2020/04/13/screensavers/4.target-membership.png&#34; alt=&#34;Fix target membership&#34;&gt;
 &lt;em&gt;Fix target membership&lt;/em&gt;
 &lt;!-- raw HTML omitted --&gt;&lt;!-- raw HTML omitted --&gt;&lt;/p&gt;
 &lt;p&gt;You&amp;rsquo;ll need to fake the animation in the mac app. Here is some stub code for a view controller (this should only have the mac app as a target):&lt;/p&gt;
@@ -311,12 +311,12 @@ Early on a Saturday morning, I received a phone call from my good friend Jay. It
 &lt;code&gt;-[GreenSquare.GreenSquareView initWithFrame:isPreview:]: unrecognized selector sent to instance 0x7fd13af16950&lt;/code&gt;&lt;/p&gt;
 &lt;p&gt;Fortunately, there&amp;rsquo;s an easy fix!&lt;/p&gt;
 &lt;p&gt;Back in Xcode, select your project on the left, then your screensaver target, then &amp;ldquo;Build Phases&amp;rdquo;. Under &amp;ldquo;Compile Sources&amp;rdquo;, ensure that your ScreenSaverView subclass is the &lt;em&gt;first&lt;/em&gt; Swift file.&lt;/p&gt;
-&lt;p&gt;![Fix Build Phases](/posts/2020/04/13/screensavers/5. compile sources fix.png)
+&lt;p&gt;&lt;img src=&#34;https://tolar.town/posts/2020/04/13/screensavers/5.compile-sources-fix.png&#34; alt=&#34;Fix Build Phases&#34;&gt;
 &lt;em&gt;Fix Build Phases&lt;/em&gt;
 &lt;!-- raw HTML omitted --&gt;&lt;!-- raw HTML omitted --&gt;&lt;/p&gt;
 &lt;h1 id=&#34;code&#34;&gt;Code!&lt;/h1&gt;
 &lt;p&gt;The code mentioned here is over on &lt;a href=&#34;https://github.com/rhaining/screensaver-demo&#34;&gt;github.com/rhaining/screensaver-demo&lt;/a&gt;.&lt;/p&gt;
-&lt;p&gt;![App preview](/posts/2020/04/13/screensavers/6. app preview.png)
+&lt;p&gt;&lt;img src=&#34;https://tolar.town/posts/2020/04/13/screensavers/6.app-preview.png&#34; alt=&#34;App preview&#34;&gt;
 &lt;em&gt;App preview&lt;/em&gt;
 &lt;!-- raw HTML omitted --&gt;&lt;!-- raw HTML omitted --&gt;&lt;/p&gt;
 &lt;h1 id=&#34;what-else&#34;&gt;What else?&lt;/h1&gt;
